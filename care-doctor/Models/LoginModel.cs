@@ -7,6 +7,7 @@ namespace caredoctor.Models
         public string care_id { get; set; }
         public string email { get; set; }
         public string expiry_key { get; set; }
+        public string token { get; set; }
 
         public bool CheckEmptySignupInformation()
         {

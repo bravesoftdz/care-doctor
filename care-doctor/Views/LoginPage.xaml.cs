@@ -8,6 +8,8 @@ using caredoctor.Models;
 using caredoctor.Services;
 using System.Net.Http;
 using System.Net;
+using caredoctor.Views;
+using Newtonsoft.Json;
 
 namespace care_doctor.Views
 {
@@ -15,6 +17,7 @@ namespace care_doctor.Views
     {
         LoginModel _login_model;
         LoginServices _login_services;
+        Dashboard _dashboard = new Dashboard();
 
         public LoginPage()
         {
@@ -36,7 +39,19 @@ namespace care_doctor.Views
                 Console.WriteLine(login_response.StatusCode);
                 if (login_response.StatusCode == HttpStatusCode.OK)
                 {
+                    var response = (login_response.Content.ReadAsStringAsync().Result);
+                    LoginModel json_response = JsonConvert.DeserializeObject<LoginModel>(response);
+                    //dynamic json_response2 = JsonConvert.DeserializeObject(response);
+                    Console.WriteLine(json_response.care_id);
+
+                    //Console.WriteLine(json_response["email"]);
                     await DisplayAlert("Care-Doctor", "Login Success", "OK");
+                    Application.Current.Properties["care_id"] = json_response.care_id;
+                    Application.Current.Properties["email"] = json_response.email;
+                    Application.Current.Properties["expire_key"] = json_response.expiry_key;
+                    Application.Current.Properties["token"] = json_response.token;
+                    await Application.Current.SavePropertiesAsync();
+                    await Navigation.PushAsync(_dashboard);
                 }
                 else
                 {
