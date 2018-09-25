@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:care_doctor.Views" x:Class="care_doctor.Views.LoginPage">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+        <StackLayout Grid.Row="0" Grid.Column="1" VerticalOptions="CenterAndExpand" Padding="10">
+            <StackLayout x:Name="LoginStack">
+                <Entry x:Name="txtEmail" Placeholder="Email"></Entry> 
+                <Entry x:Name="txtEmailOtp" Placeholder="Email OTP" IsVisible="false"></Entry>
+                <Button x:Name="btnRequestOtp" Text="Request OTP" BackgroundColor="Silver" Clicked="BtnRequestOtp"></Button>
+                <Button x:Name="btnLogin" Clicked="BtnLoginComplete" Text="Login" BackgroundColor="Silver" IsVisible="false"></Button>
+                <Label Text="Dont have an account? Signup here"></Label>                
+                <Button Text="Signup" Clicked="BtnSignup"></Button>
+            </StackLayout>
+            <StackLayout x:Name="SignupStack" IsVisible="false">
+                <Entry x:Name="txtSignupEmail" Placeholder="Email"></Entry> 
+                <Button x:Name="btnSignup" Text="Signup" BackgroundColor="Silver" Clicked="BtnSignupComplete"></Button>
+                <Label Text="OTP will be sent to your email for login. Make sure the email is valid"></Label>
+            </StackLayout>
+        </StackLayout>
+      <Label Text="Careme Doctor" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+    </Grid>
+</ContentPage>
