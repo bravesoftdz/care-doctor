@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace caredoctor.Models
 {
     public class LoginModel
@@ -8,6 +10,10 @@ namespace caredoctor.Models
         public string email { get; set; }
         public string expiry_key { get; set; }
         public string token { get; set; }
+        public string name { get; set; }
+        public string address { get; set; }
+        public string phone { get; set; }
+        public List<string> patients_list = new List<string>();
 
         public bool CheckEmptySignupInformation()
         {

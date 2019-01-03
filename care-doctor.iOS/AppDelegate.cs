@@ -22,6 +22,8 @@ namespace care_doctor.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Rg.Plugins.Popup.Popup.Init();
+            Couchbase.Lite.Support.iOS.Activate();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new care_doctor.Views.App());
 

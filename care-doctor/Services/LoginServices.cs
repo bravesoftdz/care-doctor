@@ -1,13 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json;
 using System.Net.Http;
-using System.Collections.ObjectModel;
 using caredoctor.Models;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Text;
-using Xamarin.Forms;
-using System.Threading;
 
 namespace caredoctor.Services
 {

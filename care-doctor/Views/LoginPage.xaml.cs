@@ -28,7 +28,7 @@ namespace care_doctor.Views
 
         // Login scenario - Direct and After Signup
 
-        public async void BtnLoginComplete()
+        public async void BtnLoginComplete(object sender, EventArgs e)
         {
             //this._login_model.email = txtEmail.Text.ToString();
             this._login_model.otp_no = txtEmailOtp.Text.ToString();

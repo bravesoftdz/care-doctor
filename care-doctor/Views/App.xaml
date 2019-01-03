@@ -1,5 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="care_doctor.Views.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BaseColor">#2b3d51</Color>
+            <Color x:Key="PrimaryColor">#5bb2f5</Color>
+            <Color x:Key="SuccessColor">#5cd674</Color>
+            <Color x:Key="WarningColor">#e7e75e</Color>
+            <Color x:Key="DangerColor">#e87461</Color>
+            <Color x:Key="EmptyColor">#f5f5f5</Color>
+            <Color x:Key="NoFill">#fafafa</Color>
+            <Color x:Key="DarkBG">#3e6a8d</Color>
+            <ControlTemplate x:Key="MainTemplate">
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Row="0" Grid.Column="0" BackgroundColor="{StaticResource BaseColor}">
+                        <Label Text="&#xf00a;"
+                            FontSize="20"
+                            TextColor="#fefefe"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start"
+                               Margin="5, 7, 0, 0"
+                            >
+                            <!--<Label.GestureRecognizers>
+                                <ClickGestureRecognizer Clicked="{}" />
+                            </Label.GestureRecognizers>-->
+                            <Label.FontFamily>
+                                <OnPlatform
+                                    x:TypeArguments="x:String"
+                                    Android="fontawesomesolid.otf#Font Awesome 5 Free Solid"
+                                    iOS="Font Awesome 5 Free Regular"/>
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
+                    
+                    <ContentPresenter Grid.Row="1" Grid.Column="0"></ContentPresenter>
+                    <AbsoluteLayout x:Name="appsMenu" IsVisible="false">
+                        <Frame BorderColor="#cccccc" AbsoluteLayout.LayoutBounds="10, 35, 180, 120">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="&#xf3fd;"
+                            FontSize="20"
+                            TextColor="#777777"
+                            VerticalOptions="Center"
+                            Grid.Row="0" Grid.Column="0"
+                           HorizontalOptions="Center"
+                            >
+                                    <Label.FontFamily>
+                                        <OnPlatform
+                                        x:TypeArguments="x:String"
+                                        Android="fontawesomesolid.otf#Font Awesome 5 Free Solid"
+                                        iOS="Font Awesome 5 Free Regular"/>
+                                    </Label.FontFamily>
+                                </Label>
+                                <Label Text="&#xf0c0;"
+                            FontSize="20"
+                            TextColor="#777777"
+                            VerticalOptions="Center"
+                            Grid.Row="0" Grid.Column="1" 
+                           HorizontalOptions="Center"
+                            >
+                                    <Label.FontFamily>
+                                        <OnPlatform
+                                        x:TypeArguments="x:String"
+                                        Android="fontawesomesolid.otf#Font Awesome 5 Free Solid"
+                                        iOS="Font Awesome 5 Free Regular"/>
+                                    </Label.FontFamily>
+                                </Label>
+                                <Label Text="&#xf279;"
+                                    FontSize="20"
+                                    TextColor="#777777"
+                                    VerticalOptions="Center"
+                                    Grid.Row="0" Grid.Column="2"
+                                   HorizontalOptions="Center">
+                                    <Label.FontFamily>
+                                        <OnPlatform
+                                        x:TypeArguments="x:String"
+                                        Android="fontawesomesolid.otf#Font Awesome 5 Free Solid"
+                                        iOS="Font Awesome 5 Free Regular"/>
+                                    </Label.FontFamily>
+                                </Label>
+                                <Label Text="&#xf013;"
+                                    FontSize="20"
+                                    TextColor="#777777"
+                                    VerticalOptions="Center"
+                                    Grid.Row="1" Grid.Column="0" 
+                                   HorizontalOptions="Center">
+                                    <Label.FontFamily>
+                                        <OnPlatform
+                                        x:TypeArguments="x:String"
+                                        Android="fontawesomesolid.otf#Font Awesome 5 Free Solid"
+                                        iOS="Font Awesome 5 Free Regular"/>
+                                    </Label.FontFamily>
+                                </Label>
+
+                            </Grid>
+                        </Frame>
+                    </AbsoluteLayout>
+                    <StackLayout Grid.Row="2" Grid.Column="0" BackgroundColor="{StaticResource BaseColor}"></StackLayout>
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
