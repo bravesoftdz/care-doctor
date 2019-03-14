@@ -11,6 +11,6 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
-    <PackageReference Include="Microsoft.Azure.DocumentDB" Version="2.2.3" />
+    <PackageReference Include="Google.Cloud.Firestore" Version="1.0.0-beta19" />
   </ItemGroup>
 </Project>
