@@ -23,7 +23,7 @@ namespace care_doctor.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new care_doctor.Views.App());
+            LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }
